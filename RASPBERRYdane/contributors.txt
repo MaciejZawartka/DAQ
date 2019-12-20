@@ -1,0 +1,3 @@
+Stanislaw Uzdrzychowski:    baza danych
+Maciej Zawartka:            serwer mqtt, przygotowanie danych
+Stanislaw Zysnarski:        odczyt danych z SQL
