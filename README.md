@@ -23,7 +23,8 @@ rejestrującej założony sygnał z rozproszonego systemu pomiarowego.
 
 Zakres projektu:   W zakres projektu wchodzą:
 • przygotowanie merytoryczne wszystkich członków zespołu,
-• wybór obiektu badań (wybór wielkości fizycznej do badania),• wybór komponentów oraz ich skomplementowanie,
+• wybór obiektu badań (wybór wielkości fizycznej do badania),
+• wybór komponentów oraz ich skomplementowanie,
 • budowa układu pomiarowego, zaprogramowanie oraz kalibracja wskazań
 czujników,
 • budowa układu rejestrującego, zaprogramowanie komunikacji z układem
