@@ -34,3 +34,5 @@ podstawie bazy danych,
 • fuzja komponentów składowych,
 • testy weryfikacyjne,
 • opracowanie dokumentacji z projektu.
+KONIEC
+koniec koniec
