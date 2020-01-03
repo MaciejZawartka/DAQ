@@ -1,7 +1,7 @@
 import sqlite3 as lite
 import sys
 con = lite.connect('dane.db')
-typ_czujnikow = input("Podaj typ wykorzystywanych czujnikow: ")
+typ_czujnikow = str(input("Podaj typ wykorzystywanych czujnikow: "))
 liczba_czujnikow = int(input("Podaj liczbe wykorzystywanych czujnikow: "))
 
 with con: 
