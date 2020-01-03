@@ -5,11 +5,11 @@
  wysyłanie danych do clienta
 **********************************************/
 
-#include "lib/Wire.h"
-#include "lib/SPI.h"
-#include "lib/Adafruit_Sensor.h"
-#include "lib/Adafruit_BMP280.h"
-#include "ESP8266WiFi/src/ESP8266WiFi.h"
+#include <Wire.h>
+#include <SPI.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BMP280.h>
+#include <ESP8266WiFi.h> 
 
 #define BMP_SCK 13
 #define BMP_MISO 12
@@ -29,12 +29,21 @@ const char* server1 = "80";
 //const char* password = "90699443";
 
 // ============== samsung =========
-const char* ssid = "Kamilwifi";
-const char* password = "11112222";
+//const char* ssid = "Kamilwifi";
+//const char* password = "11112222";
 
+// ============== mackowe =========
+const char* ssid = "UPC2501659";
+const char* password = "wy2fHfsvJkyp";
+
+
+// ===SOSNOWIEC===
+//const char* ssid = "UPC52173CC";
+//const char* password = "CsebYcwrm4zz";
 
 WiFiClient client;
 WiFiServer server(80);
+
 
 //================= wspolczynniki kalibracyjne ============================
 float korekt_temp,korekt_pres,korekt_wys=1;
