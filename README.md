@@ -1,8 +1,12 @@
 # Repozytorium DAQ
 #_Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"_
 #
-##__Opis projektu__:  
 #
+## TO DO:
+1. Zapis z MQTT do bazy
+2. Serwer FLASK
+
+## __Opis projektu__:  
 __Rozproszone systemy pomiarowe__, oparte o kablową transmisję danych związane są
 z licznymi problemami. Argumentację zacząć można od okablowania stanowiska badań, które
 mogą powodować zagrożenie zdrowia operatora, jeśli w zły sposób są ułożone wokół
@@ -19,14 +23,12 @@ kartę pomiarową (z ang. _DAQ- data acquisition_), współpracującą z wieloma
 wykonywania pomiaru, działającą w oparciu o bezprzewodową transmisję danych. Taka karta
 powinna również zapewniać możliwość wyświetlania danych w czasie rzeczywistym za
 pomocą urządzenia dostępnego na stanowisku badań.
-
-##__Cel projektu:__    
 #
+## __Cel projektu:__    
 Zbudowanie, zaprogramowanie i przeprowadzenie weryfikacji działania karty DAQ,
 rejestrującej założony sygnał z rozproszonego systemu pomiarowego.
-
-##__Zakres projektu:__
 #
+## __Zakres projektu:__
 W zakres projektu wchodzą:
 - przygotowanie merytoryczne wszystkich członków zespołu,
 - wybór obiektu badań (wybór wielkości fizycznej do badania),
