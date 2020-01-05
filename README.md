@@ -1,7 +1,7 @@
-# Repozytorium DAQ
-#_Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"_
+## Repozytorium DAQ
 #
 #
+# _Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"_
 ## TO DO:
 1. Zapis z MQTT do bazy
 2. Serwer FLASK
