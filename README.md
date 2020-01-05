@@ -1,7 +1,7 @@
 # Repozytorium DAQ
 #_Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"_
 #
-#__Opis projektu__:  
+##__Opis projektu__:  
 #
 __Rozproszone systemy pomiarowe__, oparte o kablową transmisję danych związane są
 z licznymi problemami. Argumentację zacząć można od okablowania stanowiska badań, które
@@ -20,12 +20,12 @@ wykonywania pomiaru, działającą w oparciu o bezprzewodową transmisję danych
 powinna również zapewniać możliwość wyświetlania danych w czasie rzeczywistym za
 pomocą urządzenia dostępnego na stanowisku badań.
 
-#__Cel projektu:__    
+##__Cel projektu:__    
 #
 Zbudowanie, zaprogramowanie i przeprowadzenie weryfikacji działania karty DAQ,
 rejestrującej założony sygnał z rozproszonego systemu pomiarowego.
 
-#__Zakres projektu:__
+##__Zakres projektu:__
 #
 W zakres projektu wchodzą:
 - przygotowanie merytoryczne wszystkich członków zespołu,
