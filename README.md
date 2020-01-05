@@ -1,6 +1,4 @@
 # Repozytorium DAQ
-#
-#
 # _Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"_
 ## TO DO:
 1. Zapis z MQTT do bazy
