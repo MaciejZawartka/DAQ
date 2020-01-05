@@ -1,4 +1,4 @@
-## Repozytorium DAQ
+# Repozytorium DAQ
 #
 #
 # _Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"_
