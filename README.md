@@ -1,5 +1,5 @@
 # DAQ
-##Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"
+#Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"
 
 Opis projektu:  Rozproszone systemy pomiarowe, oparte o kablową transmisję danych związane są
 z licznymi problemami. Argumentację zacząć można od okablowania stanowiska badań, które
@@ -22,17 +22,15 @@ Cel projektu:    Zbudowanie, zaprogramowanie i przeprowadzenie weryfikacji dzia�
 rejestrującej założony sygnał z rozproszonego systemu pomiarowego.
 
 Zakres projektu:   W zakres projektu wchodzą:
-• przygotowanie merytoryczne wszystkich członków zespołu,\n
-• wybór obiektu badań (wybór wielkości fizycznej do badania),\n
-• wybór komponentów oraz ich skomplementowanie,\n
-• budowa układu pomiarowego, zaprogramowanie oraz kalibracja wskazań
+- przygotowanie merytoryczne wszystkich członków zespołu,
+- wybór obiektu badań (wybór wielkości fizycznej do badania),
+- wybór komponentów oraz ich skomplementowanie,
+- budowa układu pomiarowego, zaprogramowanie oraz kalibracja wskazań
 czujników,
-• budowa układu rejestrującego, zaprogramowanie komunikacji z układem
+- budowa układu rejestrującego, zaprogramowanie komunikacji z układem
 pomiarowym, zbudowanie aplikacji do tworzenia i edycji bazy danych,
 opracowanie aplikacji do uruchomienia serwera oraz przetwarzania danych na
 podstawie bazy danych,
-• fuzja komponentów składowych,
-• testy weryfikacyjne,
-• opracowanie dokumentacji z projektu.
-KONIEC
-koniec koniec
+- fuzja komponentów składowych,
+- testy weryfikacyjne,
+- opracowanie dokumentacji z projektu.
