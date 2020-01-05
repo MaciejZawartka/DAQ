@@ -35,7 +35,7 @@ float temp, pres;
 int poczekaj= 5000; 
 Adafruit_BMP280 bme; // I2C
 
-#define ID_URZ "bmp280e1";  //definicja id urzadzenia
+#define ID_URZ "b1";  //definicja id urzadzenia
 
 /************************* WiFi Access Point *********************************/
 
