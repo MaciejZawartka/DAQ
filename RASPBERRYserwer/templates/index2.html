@@ -72,10 +72,10 @@
     </body>
 </div> 
 
-	    <h3> Ostatni odczyt czujnika: {{ time }} ==> <a href="/"class="button">ODSWIEZ</a></h3>	
+	    <h3> Ostatni odczyt czujnika: {{ time1 }} ==> <a href="/"class="button">ODSWIEZ</a></h3>	
 	    <hr>
 	    <p> @2020 Developed by Malinowe Mode Wilki</p>
-
+    
 
     <script src="../static/raphael-2.1.4.min.js"></script>
     <script src="../static/justgage.js"></script>
@@ -130,7 +130,51 @@
                 }); 
             }); 
         </script> 
+	
+  
     </center> 
 </body> 
-  
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highstock Example</title>
+        <script src="{{ url_for('static', filename='jquery-1.8.3.min.js') }}"></script>
+		<script type="text/javascript">
+		$(function () {
+    $.getJSON('http://0.0.0.0:5000/data.json', function (data,data1) {
+        // Create the chart
+        $('#container').highcharts('StockChart', {
+            rangeSelector : {
+                selected : 1
+            },
+            title : {
+                text : 'My Sensor'
+            },
+            series : [{
+                name : 'Value',
+                data : data,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            },
+	    {
+                name : 'Value',
+                data : data1,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        });
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="{{ url_for('static', filename='highstock.js') }}"></script>
+<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
+<script src="{{ url_for('static', filename='exporting.js') }}"></script>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+ 
+	</body>
+
 </html>
