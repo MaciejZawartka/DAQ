@@ -1,2 +1,0 @@
-Kamil Walczyk:    odczyty z sensorow, kalibracja
-Maciej Zawartka:  client mqtt

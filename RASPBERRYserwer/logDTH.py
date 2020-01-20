@@ -38,18 +38,35 @@ def data():
     cursor = connection.cursor()
     cursor.execute("SELECT Cast ((JulianDay(timestamp) - JulianDay('1970-01-01')) * 24 * 60 * 60  As Integer)*1000, wartosc from BMP1 where (pomiar='temp')")
     results = cursor.fetchall()
-    cursor.execute("SELECT Cast ((JulianDay(timestamp) - JulianDay('1970-01-01')) * 24 * 60 * 60  As Integer)*1000, wartosc from BMP1 where (pomiar='pres')")
-    results2 = cursor.fetchall()
     #print (results)
-    return json.dumps(results,results2)
+    return json.dumps(results)
 
+@app.route("/data1.json")
 def data1():
     connection = sqlite3.connect("../RASPBERRYdane/dane.db")
     cursor = connection.cursor()
-    cursor.execute("SELECT Cast ((JulianDay(timestamp) - JulianDay('1970-01-01')) * 24 * 60 * 60  As Integer)*1000, wartosc from BMP1 where (pomiar='pres')")
-    results2 = cursor.fetchall()
+    cursor.execute("SELECT Cast ((JulianDay(timestamp) - JulianDay('1970-01-01')) * 24 * 60 * 60  As Integer)*1000, wartosc from BMP2 where (pomiar='temp')")
+    results = cursor.fetchall()
     #print (results)
-    return json.dumps(results2)
+    return json.dumps(results)
+
+@app.route("/data2.json")
+def data2():
+    connection = sqlite3.connect("../RASPBERRYdane/dane.db")
+    cursor = connection.cursor()
+    cursor.execute("SELECT Cast ((JulianDay(timestamp) - JulianDay('1970-01-01')) * 24 * 60 * 60  As Integer)*1000, wartosc from BMP1 where (pomiar='pres')")
+    results = cursor.fetchall()
+    #print (results)
+    return json.dumps(results)
+
+@app.route("/data3.json")
+def data3():
+    connection = sqlite3.connect("../RASPBERRYdane/dane.db")
+    cursor = connection.cursor()
+    cursor.execute("SELECT Cast ((JulianDay(timestamp) - JulianDay('1970-01-01')) * 24 * 60 * 60  As Integer)*1000, wartosc from BMP2 where (pomiar='pres')")
+    results = cursor.fetchall()
+    #print (results)
+    return json.dumps(results)
 
  
 @app.route("/graph")
@@ -67,7 +84,7 @@ def index():
             'temp2': temp2,
             'press2': press2
             }
-            return render_template('index2.html', **templateData)
+            return render_template('index.html', **templateData)
 
 
 # main route
