@@ -1,0 +1,136 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title> 
+	Projekt malina 
+	</title> 
+	   <link rel="stylesheet" href='../static/style.css'/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> 
+	<style type="text/css"> 
+		.selectt { 
+			color: #33333; 
+			display: none; 
+			width: 90%; 
+			background: white 
+		} 
+		
+		label { 
+			margin-right: 20px; 
+		} 
+	    #g1,
+	    #g2,
+	    #g3,
+	    #g4 {
+	    width: 200px;
+	    height: 160px;
+	    display: inline-block;
+	    margin: 1em;
+	    }
+	</style> 
+</head> 
+
+<body> 
+	<center> 
+		<h3 style="color:grey;"> 
+		Modul akwizycji danych rozproszonego systemu pomiarowego
+        </h3> 
+        
+        <div> 
+            <label> 
+                <input type="checkbox" name="colorCheckbox" 
+                       value="CZ1"> Czujnik 1</label> 
+            <label> 
+                <input type="checkbox" name="colorCheckbox" 
+                       value="CZ2"> Czujnik 2</label> 
+         
+        </div> 
+	
+	
+<div class="CZ1 selectt"> 
+
+    <body>
+	
+	<h1>Czujnik 1 </h1>
+	<div id="g1"></div>
+	<div id="g2"></div>
+
+    </body>
+</div> 
+         
+<div class="CZ2 selectt"> 
+    
+    <body>
+
+	<h1>Czujnik 2 </h1>
+	<div id="g3"></div>
+	<div id="g4"></div>
+	<hr>
+
+	
+    </body>
+</div> 
+
+	    <h3> Ostatni odczyt czujnika: {{ time }} ==> <a href="/"class="button">ODSWIEZ</a></h3>	
+	    <hr>
+	    <p> @2020 Developed by Malinowe Mode Wilki</p>
+
+
+    <script src="../static/raphael-2.1.4.min.js"></script>
+    <script src="../static/justgage.js"></script>
+    <script>
+	var g1, g2, g3, g4;
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    g1 = new JustGage({
+		id: "g1",
+		value: {{temp}},
+		valueFontColor: "black",
+		min: -10,
+		max: 50,
+		title: "Temperatura",
+		label: "Celciuszy"
+	});
+	    g2 = new JustGage({
+		id: "g2",
+		value: {{press}},
+		valueFontColor: "black",
+		min: 950,
+		max: 1100,
+		title: "Cisnienie",
+		label: "%"
+	});
+	    g3 = new JustGage({
+		id: "g3",
+		value: {{temp2}},
+		valueFontColor: "black",
+		min: -10,
+		max: 50,
+		title: "Temperatura",
+		label: "Celciuszy"
+	});
+	    g4 = new JustGage({
+		id: "g4",
+		value: {{press2}},
+		valueFontColor: "black",
+		min: 950,
+		max: 1100,
+		title: "Cisnienie",
+		label: "%"
+	});
+      });
+    </script>
+
+       
+        <script type="text/javascript"> 
+            $(document).ready(function() { 
+                $('input[type="checkbox"]').click(function() { 
+                    var inputValue = $(this).attr("value"); 
+                    $("." + inputValue).toggle(); 
+                }); 
+            }); 
+        </script> 
+    </center> 
+</body> 
+  
+</html>
