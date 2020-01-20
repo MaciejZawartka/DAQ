@@ -10,7 +10,7 @@ import sqlite3
 
 # Retrieve data from database
 def getData():
-    conn=sqlite3.connect('../RASPBERRYdane/dane1.db')
+    conn=sqlite3.connect('../RASPBERRYdane/dane.db')
     curs=conn.cursor()
 
     for row in curs.execute("SELECT * FROM BMP1 where (pomiar='temp') ORDER BY timestamp DESC LIMIT 1"):
@@ -49,4 +49,4 @@ def index():
 
 
 if __name__ == "__main__":
-   app.run(host='0.0.0.0', port=5002, debug=False)
+   app.run(host='0.0.0.0', port=5000, debug=False)
