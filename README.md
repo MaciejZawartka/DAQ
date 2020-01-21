@@ -1,7 +1,10 @@
-# DAQ
-##Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"
+# Repozytorium DAQ
+## _Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"_
+## TO DO:
+1. Serwer FLASK
 
-Opis projektu:  Rozproszone systemy pomiarowe, oparte o kablową transmisję danych związane są
+## __Opis projektu__:  
+__Rozproszone systemy pomiarowe__, oparte o kablową transmisję danych związane są
 z licznymi problemami. Argumentację zacząć można od okablowania stanowiska badań, które
 mogą powodować zagrożenie zdrowia operatora, jeśli w zły sposób są ułożone wokół
 stanowiska i utrudniają się przemieszczanie w jego obrębie. Również sama dokładność
@@ -13,26 +16,26 @@ o bezprzewodową transmisję danych wpływa na wygodę operatora, a także dzię
 z wielkości prądowych na cyfrowe, przy zastosowaniu kontroli przesyłanych pakietów może
 w sposób pozytywny wpłynąć na poprawność samych odczytów.
 Stąd zaistniała potrzeba zbudowania systemu pomiarowego opartego o możliwie tanią
-kartę pomiarową (z ang. DAQ- data acquisition), współpracującą z wieloma układami do
+kartę pomiarową (z ang. _DAQ- data acquisition_), współpracującą z wieloma układami do
 wykonywania pomiaru, działającą w oparciu o bezprzewodową transmisję danych. Taka karta
 powinna również zapewniać możliwość wyświetlania danych w czasie rzeczywistym za
 pomocą urządzenia dostępnego na stanowisku badań.
-
-Cel projektu:    Zbudowanie, zaprogramowanie i przeprowadzenie weryfikacji działania karty DAQ,
+#
+## __Cel projektu:__    
+Zbudowanie, zaprogramowanie i przeprowadzenie weryfikacji działania karty DAQ,
 rejestrującej założony sygnał z rozproszonego systemu pomiarowego.
-
-Zakres projektu:   W zakres projektu wchodzą:
-• przygotowanie merytoryczne wszystkich członków zespołu,\n
-• wybór obiektu badań (wybór wielkości fizycznej do badania),\n
-• wybór komponentów oraz ich skomplementowanie,\n
-• budowa układu pomiarowego, zaprogramowanie oraz kalibracja wskazań
+#
+## __Zakres projektu:__
+W zakres projektu wchodzą:
+- przygotowanie merytoryczne wszystkich członków zespołu,
+- wybór obiektu badań (wybór wielkości fizycznej do badania),
+- wybór komponentów oraz ich skomplementowanie,
+- budowa układu pomiarowego, zaprogramowanie oraz kalibracja wskazań
 czujników,
-• budowa układu rejestrującego, zaprogramowanie komunikacji z układem
+- budowa układu rejestrującego, zaprogramowanie komunikacji z układem
 pomiarowym, zbudowanie aplikacji do tworzenia i edycji bazy danych,
 opracowanie aplikacji do uruchomienia serwera oraz przetwarzania danych na
 podstawie bazy danych,
-• fuzja komponentów składowych,
-• testy weryfikacyjne,
-• opracowanie dokumentacji z projektu.
-KONIEC
-koniec koniec
+- fuzja komponentów składowych,
+- testy weryfikacyjne,
+- opracowanie dokumentacji z projektu.

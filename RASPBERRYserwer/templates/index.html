@@ -1,0 +1,239 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>Projekt malina</title> 
+	<link rel="stylesheet" href='../static/style.css'/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> 
+	<script src="{{ url_for('static', filename='jquery-1.8.3.min.js') }}"></script>
+	<script src="../static/raphael-2.1.4.min.js"></script>
+	<script src="../static/justgage.js"></script>
+
+
+	
+	<style type="text/css"> 
+		.selectt { 
+			 
+			display: none; 
+			
+		} 
+		.selecttt { 
+			 
+			display: none; 
+			
+		} 
+		
+		label { 
+			margin-right: 20px; 
+		} 
+	    #g1,
+	    #g2,
+	    #g3,
+	    #g4 {
+	    width: 200px;
+	    height: 160px;
+	    display: inline-block;
+	    margin: 1em;
+	    }
+	</style> 
+	
+
+    <script>
+	var g1, g2, g3, g4;
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    g1 = new JustGage({
+		id: "g1",
+		value: {{temp}},
+		valueFontColor: "black",
+		min: -10,
+		max: 50,
+		title: "Temperatura",
+		label: "Celciuszy"
+	});
+	    g2 = new JustGage({
+		id: "g2",
+		value: {{press}},
+		valueFontColor: "black",
+		min: 950,
+		max: 1100,
+		title: "Cisnienie",
+		label: "%"
+	});
+	    g3 = new JustGage({
+		id: "g3",
+		value: {{temp2}},
+		valueFontColor: "black",
+		min: -10,
+		max: 50,
+		title: "Temperatura",
+		label: "Celciuszy"
+	});
+	    g4 = new JustGage({
+		id: "g4",
+		value: {{press2}},
+		valueFontColor: "black",
+		min: 950,
+		max: 1100,
+		title: "Cisnienie",
+		label: "%"
+	});
+      });
+    </script>
+
+       
+        <script type="text/javascript"> 
+            $(document).ready(function() { 
+                $('input[type="checkbox"]').click(function() { 
+                    var inputValue = $(this).attr("value"); 
+                    $("." + inputValue).toggle(); 
+                }); 
+            }); 
+        </script> 
+	
+	
+<script type="text/javascript">
+$(function () {
+			
+			
+    $.getJSON('http://0.0.0.0:5000/data.json', function (data) {
+	$.getJSON('http://0.0.0.0:5000/data1.json', function (data1) {
+        // Create the chart
+        $('#container').highcharts('StockChart', {
+            rangeSelector : {
+                selected : 1
+            },
+            title : {
+                text : 'Temperatura'
+            },
+            series : [{
+                name : 'BMP1',
+                data : data,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            },
+	    {
+                name : 'BMP2',
+                data : data1,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        });
+	});
+    });
+});
+</script>
+
+
+<script src="{{ url_for('static', filename='jquery-1.8.3.min.js') }}"></script>
+		<script type="text/javascript">
+		$(function () {
+			
+			
+    $.getJSON('http://0.0.0.0:5000/data2.json', function (data2) {
+	$.getJSON('http://0.0.0.0:5000/data3.json', function (data3) {
+        // Create the chart
+        $('#container2').highcharts('StockChart', {
+            rangeSelector : {
+                selected : 1
+            },
+            title : {
+                text : 'Cisnienie'
+            },
+            series : [{
+                name : 'BMP1',
+                data : data2,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            },
+	    {
+                name : 'BMP2',
+                data : data3,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        });
+	});
+    });
+});
+</script>
+</head> 
+
+
+<body> 
+	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
+	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
+	<script src="{{ url_for('static', filename='exporting.js') }}"></script>
+	
+	
+	<center> 
+	<h3 style="color:grey;"> Modul akwizycji danych rozproszonego systemu pomiarowego  </h3> 
+        
+        <div> 
+	<label> 
+                <input type="checkbox" name="colorCheckbox" 
+                       value="CZ1"> Czujnik 1</label> 
+	<label> 
+                <input type="checkbox" name="colorCheckbox" 
+                       value="CZ2"> Czujnik 2</label> 
+	<label> 
+		<input type="checkbox" name="colorCheckbox" 
+                       value="W1">Wykres1</label> 
+	<label> 
+                <input type="checkbox" name="colorCheckbox" 
+                       value="W2">Wykres2</label> 
+         
+        </div> 
+	
+	
+<div class="CZ1 selectt"> 
+
+	<h1>Czujnik 1 </h1>
+	<div id="g1"></div>
+	<div id="g2"></div>
+
+</div> 
+         
+<div class="CZ2 selectt"> 
+    
+   	<h1>Czujnik 2 </h1>
+	<div id="g3"></div>
+	<div id="g4"></div>
+
+</div> 
+
+<h3> Ostatni odczyt czujnika: {{ time1 }} ==> <a href="/"class="button">ODSWIEZ</a></h3>	
+
+	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
+	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
+	<script src="{{ url_for('static', filename='exporting.js') }}"></script>	    
+
+<div class="W1 selecttt"> 
+	<div id="container" style="min-width: 310px; height: 400px; width: 70%"></div>
+</div>
+
+<div class="W2 selecttt"> 
+	<div id="container2" style="min-width: 310px; height: 400px; width: 70%"></div>
+</div>
+ 
+ 		<hr>
+	    <p> @2020 Developed by Malinowe Mode Wilki</p>
+    
+
+
+	
+  
+    </center> 
+</body> 
+
+
+	
+
+ 
+
+</html>
