@@ -16,9 +16,19 @@ body{
 	border-left: 1px solid #CCCCCC;
 }
 .selectt { 
+			float: left;
 			color: #33333; 
 			display: none; 
-			width: 90%; 
+			width: 50%; 
 			background: white 
 		} 
 		
+#container{
+			width: 100%
+			margin-left:auto;
+			margin-right: auto;
+			background-color: #abbcd8; 
+
+
+
+}
