@@ -2,7 +2,7 @@
 <html> 
 
 <head> 
-	<title>Projekt malina</title> 
+	<title>Karta DAQ</title> 
 	<link rel="stylesheet" href='../static/style.css'/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
@@ -11,19 +11,14 @@
 	<script src="../static/raphael-2.1.4.min.js"></script>
 	<script src="../static/justgage.js"></script>
 
-
-	
 	<style type="text/css"> 
-		.selectt { 
-			 
-			display: none; 
-			
-		} 
+		.selectt {  
+			display: none;
+			float:   left; 
+			} 
 		.selecttt { 
-			 
-			display: none; 
-			
-		} 
+			 display: none; 
+			} 
 		
 		label { 
 			margin-right: 20px; 
@@ -42,7 +37,7 @@
 
     <script>
 	var g1, g2, g3, g4;
-	document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function(event) {
 	    g1 = new JustGage({
 		id: "g1",
 		value: {{temp}},
@@ -56,7 +51,7 @@
 		id: "g2",
 		value: {{press}},
 		valueFontColor: "black",
-		min: 950,
+		min: 900,
 		max: 1100,
 		title: "Cisnienie",
 		label: "%"
@@ -74,7 +69,7 @@
 		id: "g4",
 		value: {{press2}},
 		valueFontColor: "black",
-		min: 950,
+		min: 900,
 		max: 1100,
 		title: "Cisnienie",
 		label: "%"
@@ -82,7 +77,7 @@
       });
     </script>
 
-       
+        
         <script type="text/javascript"> 
             $(document).ready(function() { 
                 $('input[type="checkbox"]').click(function() { 
@@ -97,8 +92,8 @@
 $(function () {
 			
 			
-    $.getJSON('http://0.0.0.0:5000/data.json', function (data) {
-	$.getJSON('http://0.0.0.0:5000/data1.json', function (data1) {
+    $.getJSON('http://192.168.0.200:5000/data.json', function (data) {
+	$.getJSON('http://192.168.0.200:5000/data1.json', function (data1) {
         // Create the chart
         $('#container').highcharts('StockChart', {
             rangeSelector : {
@@ -133,8 +128,8 @@ $(function () {
 		$(function () {
 			
 			
-    $.getJSON('http://0.0.0.0:5000/data2.json', function (data2) {
-	$.getJSON('http://0.0.0.0:5000/data3.json', function (data3) {
+    $.getJSON('http://192.168.0.200:5000/data2.json', function (data2) {
+	$.getJSON('http://192.168.0.200:5000/data3.json', function (data3) {
         // Create the chart
         $('#container2').highcharts('StockChart', {
             rangeSelector : {
@@ -172,57 +167,52 @@ $(function () {
 	
 	
 	<center> 
-	<h3 style="color:grey;"> Modul akwizycji danych rozproszonego systemu pomiarowego  </h3> 
+	<h1 style="color:grey;"> Modul akwizycji danych rozproszonego systemu pomiarowego  </h1> 
         
         <div> 
 	<label> 
-                <input type="checkbox" name="colorCheckbox" 
-                       value="CZ1"> Czujnik 1</label> 
+                <input type="checkbox" id="check1" name="colorCheckbox" 
+                       value="CZ1"> BMP1</label> 
 	<label> 
-                <input type="checkbox" name="colorCheckbox" 
-                       value="CZ2"> Czujnik 2</label> 
+                <input type="checkbox" id="check2" name="colorCheckbox" 
+                       value="CZ2"> BMP2</label> 
+
 	<label> 
-		<input type="checkbox" name="colorCheckbox" 
-                       value="W1">Wykres1</label> 
+		<input type="checkbox" id="check3" name="colorCheckbox" 
+                       value="W1">Przebieg 1</label> 
 	<label> 
-                <input type="checkbox" name="colorCheckbox" 
-                       value="W2">Wykres2</label> 
-         
+                <input type="checkbox" id="check4" name="colorCheckbox" 
+                       value="W2">Przebieg 2</label> 
         </div> 
 	
-	
-<div class="CZ1 selectt"> 
-
-	<h1>Czujnik 1 </h1>
-	<div id="g1"></div>
-	<div id="g2"></div>
-
-</div> 
+	<div class="CZ1 selectt"> 
+		<h2>BMP1 </h2>
+		<div id="g1"></div>
+		<div id="g2"></div>
+	</div> 
          
-<div class="CZ2 selectt"> 
-    
-   	<h1>Czujnik 2 </h1>
+	<div class="CZ2 selectt"> 
+      	<h2>BMP2 </h2>
 	<div id="g3"></div>
 	<div id="g4"></div>
+	</div> 
 
-</div> 
-
-<h3> Ostatni odczyt czujnika: {{ time1 }} ==> <a href="/"class="button">ODSWIEZ</a></h3>	
+<h3> Ostatni odczyt BMP1: {{ time1 }} BMP2: {{time2}} ==> <a href="/"class="button">ODSWIEZ</a></h3>	
 
 	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
 	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
 	<script src="{{ url_for('static', filename='exporting.js') }}"></script>	    
 
 <div class="W1 selecttt"> 
-	<div id="container" style="min-width: 310px; height: 400px; width: 70%"></div>
+	<div id="container" style="min-width: 310px; height: 400px; width: 100%"></div>
 </div>
 
 <div class="W2 selecttt"> 
-	<div id="container2" style="min-width: 310px; height: 400px; width: 70%"></div>
+	<div id="container2" style="min-width: 310px; height: 400px; width: 100%"></div>
 </div>
  
  		<hr>
-	    <p> @2020 Developed by Malinowe Mode Wilki</p>
+	    <p> @2020 Developed by Malinowe Młode Wilki</p>
     
 
 
@@ -230,10 +220,4 @@ $(function () {
   
     </center> 
 </body> 
-
-
-	
-
- 
-
 </html>
