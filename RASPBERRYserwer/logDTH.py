@@ -29,7 +29,22 @@ def getData():
 
     for row in curs.execute("SELECT * FROM BMP2 where (pomiar='pres') ORDER BY timestamp DESC LIMIT 1"):
         press2 = row[2]
+    
     return  time1, temp, press, time2, temp2, press2
+    conn.close()
+
+# dane statystyczne
+def getStats():
+    conn=sqlite3.connect('../RASPBERRYdane/dane.db')
+    curs=conn.cursor()
+
+    for row in curs.execute("SELECT max(wartosc) FROM BMP1 where (pomiar='temp')"):
+        tempMax = row[0]
+        
+    for row in curs.execute("SELECT max(wartosc) FROM BMP2 where (pomiar='temp')"):
+        tempMax2 = row[0]
+    
+    return  tempMax, tempMax2
     conn.close()
 
 @app.route("/data.json")
@@ -76,13 +91,16 @@ def graph():
 @app.route('/')
 def index():
             time1, temp, press, time2, temp2, press2 = getData()
+            tempMax, tempMax2 = getStats()
             templateData = {
             'time1': time1,
             'temp': temp,
             'press': press,
             'time2': time2,
             'temp2': temp2,
-            'press2': press2
+            'press2': press2,
+            'tempMax': tempMax,
+            'tempMax2': tempMax2
             }
             return render_template('index.html', **templateData)
 
@@ -92,4 +110,5 @@ def index():
 
 
 if __name__ == "__main__":
-   app.run(host='192.168.0.200', port=5000, debug=False)
+#    app.run(host='192.168.0.200', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=5000, debug=False)

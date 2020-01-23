@@ -32,10 +32,187 @@
 	    display: inline-block;
 	    margin: 1em;
 	    }
+	    .button1 {
+	      margin: 30px 5px 0 2px;
+	      padding: 8px 30px;
+	      border-radius: 5px;
+	      font-size: 18px;
+	      border: none;
+	      background: #34aadc;
+	      color: white;
+	      cursor: pointer;
+		}
+	td { 
+		border: 1px solid black; 
+		}
 	</style> 
 	
 
-    <script>
+<script type="text/javascript">
+$(function () {
+			
+			
+//    $.getJSON('http://192.168.0.200:5000/data.json', function (data) {
+//	$.getJSON('http://192.168.0.200:5000/data1.json', function (data1) {
+    $.getJSON('http://0.0.0.0:5000/data.json', function (data) {
+	$.getJSON('http://0.0.0.0:5000/data1.json', function (data1) {
+        // Create the chart
+        $('#container').highcharts('StockChart', {
+            rangeSelector : {
+                selected : 1
+            },
+            title : {
+                text : 'Temperatura'
+            },
+            series : [{
+                name : 'BMP1',
+                data : data,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            },
+	    {
+                name : 'BMP2',
+                data : data1,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        });
+	});
+    });
+});
+</script>
+
+
+<script src="{{ url_for('static', filename='jquery-1.8.3.min.js') }}"></script>
+		<script type="text/javascript">
+		$(function () {
+			
+			
+//    $.getJSON('http://192.168.0.200:5000/data2.json', function (data2) {
+//	$.getJSON('http://192.168.0.200:5000/data3.json', function (data3) {
+    $.getJSON('http://0.0.0.0:5000/data2.json', function (data2) {
+	$.getJSON('http://0.0.0.0:5000/data3.json', function (data3) {
+        // Create the chart
+        $('#container2').highcharts('StockChart', {
+            rangeSelector : {
+                selected : 1
+            },
+            title : {
+                text : 'Cisnienie'
+            },
+            series : [{
+                name : 'BMP1',
+                data : data2,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            },
+	    {
+                name : 'BMP2',
+                data : data3,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        });
+	});
+    });
+});
+</script>
+
+
+</head> 
+
+
+<body> 
+	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
+	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
+	<script src="{{ url_for('static', filename='exporting.js') }}"></script>
+	
+	
+	<center> 
+	<h1 style="color:grey;"> Modul akwizycji danych rozproszonego systemu pomiarowego  </h1> 
+        
+        <div> 
+		
+
+
+
+
+		
+	<label class="switch">
+		<input type="checkbox" id="czujniki" >Wskazania czujników </label>
+
+	<label class="switch">
+		<input type="checkbox" id="wykresy" >Wykresy</label> 
+		
+	<label class="switch">
+		<input type="checkbox" id="statystyka" >Dane statystyczne</label> 
+
+        </div> 
+	
+	<div class="CZ"> 
+		<div id="cz_lewy">
+			<h2>BMP1 </h2>
+			<div id="g1"></div>
+			<div id="g2"></div>
+		</div>
+		
+		<div id="cz_prawy">
+			<h2>BMP2 </h2>
+			<div id="g3"></div>
+			<div id="g4"></div>
+		</div>
+<br><i> Ostatni odczyt BMP1: {{ time1 }} BMP2: {{time2}} ==>   <a href="/"class="button1">ODŚWIEŻ</a></i>
+		
+	
+	</div> 
+	
+	
+	
+	<div class="S"> <br>
+	<table>
+	   <tr>
+	      <td></td> <td>BMP1</td> <td>BMP2</td>
+	   </tr>
+	   <tr>
+	      <td>Max Temp</td> <td>{{tempMax}}</td> <td>{{tempMax2}}</td>
+	   </tr>
+	   <tr>
+	      <td>Min Temp</td> <td>tempMin</td> <td>tempMin2</td>
+	   </tr>
+	</table>
+	
+	
+	</div> 
+	
+
+
+
+
+
+	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
+	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
+	<script src="{{ url_for('static', filename='exporting.js') }}"></script>	    
+
+<div class="W"> 
+	<div id="container" style="min-width: 310px; height: 400px; width: 90%"></div>
+	<div id="container2" style="min-width: 310px; height: 400px; width: 90%"></div>
+</div>
+ 
+ 		<hr>
+	    <p> @2020 Developed by Malinowe Młode Wilki</p>
+    
+
+
+	
+  
+    </center> 
+    
+    
+        <script>
 	var g1, g2, g3, g4;
 document.addEventListener("DOMContentLoaded", function(event) {
 	    g1 = new JustGage({
@@ -78,146 +255,57 @@ document.addEventListener("DOMContentLoaded", function(event) {
     </script>
 
         
-        <script type="text/javascript"> 
-            $(document).ready(function() { 
-                $('input[type="checkbox"]').click(function() { 
-                    var inputValue = $(this).attr("value"); 
-                    $("." + inputValue).toggle(); 
-                }); 
-            }); 
-        </script> 
-	
-	
-<script type="text/javascript">
-$(function () {
-			
-			
-    $.getJSON('http://192.168.0.200:5000/data.json', function (data) {
-	$.getJSON('http://192.168.0.200:5000/data1.json', function (data1) {
-        // Create the chart
-        $('#container').highcharts('StockChart', {
-            rangeSelector : {
-                selected : 1
-            },
-            title : {
-                text : 'Temperatura'
-            },
-            series : [{
-                name : 'BMP1',
-                data : data,
-                tooltip: {
-                    valueDecimals: 2
-                }
-            },
-	    {
-                name : 'BMP2',
-                data : data1,
-                tooltip: {
-                    valueDecimals: 2
-                }
-            }]
-        });
-	});
-    });
+<script>
+$(function(){        
+    $('#czujniki')
+      .prop('checked', localStorage.inputCZ === 'true')
+      .on('change', function() {
+         localStorage.inputCZ = this.checked;
+         if (this.checked) {
+           $('.CZ').show(0); //checked
+         } else {
+           $('.CZ').hide(0);
+         }
+      })
+      .trigger('change');
 });
 </script>
 
-
-<script src="{{ url_for('static', filename='jquery-1.8.3.min.js') }}"></script>
-		<script type="text/javascript">
-		$(function () {
-			
-			
-    $.getJSON('http://192.168.0.200:5000/data2.json', function (data2) {
-	$.getJSON('http://192.168.0.200:5000/data3.json', function (data3) {
-        // Create the chart
-        $('#container2').highcharts('StockChart', {
-            rangeSelector : {
-                selected : 1
-            },
-            title : {
-                text : 'Cisnienie'
-            },
-            series : [{
-                name : 'BMP1',
-                data : data2,
-                tooltip: {
-                    valueDecimals: 2
-                }
-            },
-	    {
-                name : 'BMP2',
-                data : data3,
-                tooltip: {
-                    valueDecimals: 2
-                }
-            }]
-        });
-	});
-    });
+<script>
+$(function(){        
+    $('#wykresy')
+      .prop('checked', localStorage.inputW === 'true')
+      .on('change', function() {
+         localStorage.inputW = this.checked;
+         if (this.checked) {
+           $('.W').show(0); //checked
+         } else {
+           $('.W').hide(0);
+         }
+      })
+      .trigger('change');
 });
 </script>
-</head> 
 
-
-<body> 
-	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
-	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
-	<script src="{{ url_for('static', filename='exporting.js') }}"></script>
+<script>
+$(function(){        
+    $('#statystyka')
+      .prop('checked', localStorage.inputS === 'true')
+      .on('change', function() {
+         localStorage.inputS = this.checked;
+         if (this.checked) {
+           $('.S').show(0); //checked
+         } else {
+           $('.S').hide(0);
+         }
+      })
+      .trigger('change');
+});
+</script>
 	
 	
-	<center> 
-	<h1 style="color:grey;"> Modul akwizycji danych rozproszonego systemu pomiarowego  </h1> 
-        
-        <div> 
-	<label> 
-                <input type="checkbox" id="check1" name="colorCheckbox" 
-                       value="CZ1"> BMP1</label> 
-	<label> 
-                <input type="checkbox" id="check2" name="colorCheckbox" 
-                       value="CZ2"> BMP2</label> 
 
-	<label> 
-		<input type="checkbox" id="check3" name="colorCheckbox" 
-                       value="W1">Przebieg 1</label> 
-	<label> 
-                <input type="checkbox" id="check4" name="colorCheckbox" 
-                       value="W2">Przebieg 2</label> 
-        </div> 
-	
-	<div class="CZ1 selectt"> 
-		<h2>BMP1 </h2>
-		<div id="g1"></div>
-		<div id="g2"></div>
-	</div> 
-         
-	<div class="CZ2 selectt"> 
-      	<h2>BMP2 </h2>
-	<div id="g3"></div>
-	<div id="g4"></div>
-	</div> 
-
-<h3> Ostatni odczyt BMP1: {{ time1 }} BMP2: {{time2}} ==> <a href="/"class="button">ODSWIEZ</a></h3>	
-
-	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
-	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
-	<script src="{{ url_for('static', filename='exporting.js') }}"></script>	    
-
-<div class="W1 selecttt"> 
-	<div id="container" style="min-width: 310px; height: 400px; width: 100%"></div>
-</div>
-
-<div class="W2 selecttt"> 
-	<div id="container2" style="min-width: 310px; height: 400px; width: 100%"></div>
-</div>
- 
- 		<hr>
-	    <p> @2020 Developed by Malinowe Młode Wilki</p>
     
-
-
-	
-  
-    </center> 
+    
 </body> 
 </html>
