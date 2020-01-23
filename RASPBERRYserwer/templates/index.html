@@ -45,6 +45,16 @@
 	td { 
 		border: 1px solid black; 
 		}
+
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#9ABAD9;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 25px; border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 25px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#fff;background-color:#409cff;}
+.tg .tg-e755{font-size:20px;text-align:center;vertical-align:top}
+.tg .tg-kftd{font-size:20px;text-align:center;vertical-align:top}
+.tg .tg-khjd{font-size:20px;text-align:center;vertical-align:top}
+.tg .tg-m71n{font-size:20px;text-align:center;vertical-align:top}
+.tg .tg-4jzn{font-size:20px;text-align:center;vertical-align:top}
+
 	</style> 
 	
 
@@ -173,18 +183,47 @@ $(function () {
 	
 	
 	<div class="S"> <br>
-	<table>
-	   <tr>
-	      <td></td> <td>BMP1</td> <td>BMP2</td>
-	   </tr>
-	   <tr>
-	      <td>Max Temp</td> <td>{{tempMax}}</td> <td>{{tempMax2}}</td>
-	   </tr>
-	   <tr>
-	      <td>Min Temp</td> <td>tempMin</td> <td>tempMin2</td>
-	   </tr>
-	</table>
+
 	
+<table class="tg">
+  <tr>
+    <th class="tg-m71n" colspan="2">TABELA DANYCH</th>
+    <th class="tg-m71n">BMP1</th>
+    <th class="tg-m71n">BMP2</th>
+  </tr>
+  <tr>
+    <td class="tg-m71n" rowspan="3">Temperatura</td>
+    <td class="tg-khjd">Max<br></td>
+    <td class="tg-khjd">{{tempMax}}</td>
+    <td class="tg-khjd">{{tempMax2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-4jzn">Min</td>
+    <td class="tg-4jzn">{{tempMin}}</td>
+    <td class="tg-4jzn">{{tempMin2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-e755">Średnia</td>
+    <td class="tg-e755">{{avgTemp}}</td>
+    <td class="tg-e755">{{avgTemp2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-m71n" rowspan="3">Cisnienie<br></td>
+    <td class="tg-4jzn">Max</td>
+    <td class="tg-4jzn">{{presMax}}</td>
+    <td class="tg-4jzn">{{presMax2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-e755">Min</td>
+    <td class="tg-e755">{{presMin}}</td>
+    <td class="tg-e755">{{presMin2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-kftd">Średnia</td>
+    <td class="tg-kftd">{{avgPres}}</td>
+    <td class="tg-kftd">{{avgPres2}}</td>
+  </tr>
+</table>
 	
 	</div> 
 	
