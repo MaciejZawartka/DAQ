@@ -5,15 +5,14 @@ body{
 }
 
 .button {
-	font: bold 15px Arial;
-	text-decoration: none;
-	background-color: #EEEEEE;
-	color: #333333;
-	padding: 2px 6px 2px 6px;
-	border-top: 1px solid #CCCCCC;
-	border-right: 1px solid #333333;
-	border-bottom: 1px solid #333333;
-	border-left: 1px solid #CCCCCC;
+	      margin: 30px 5px 0 2px;
+	      padding: 16px 40px;
+	      border-radius: 5px;
+	      font-size: 18px;
+	      border: none;
+	      background: #34aadc;
+	      color: white;
+	      cursor: pointer;
 }
 .selectt { 
 			float: left;
@@ -23,12 +22,83 @@ body{
 			background: white 
 		} 
 		
-#container{
-			width: 100%
-			margin-left:auto;
-			margin-right: auto;
-			background-color: #abbcd8; 
+#container,
+#container2{
+		min-width: 310px; 
+		height: 400px; 
+		width: 90%;
+}
+.button1 {
+		margin: 30px 5px 0 2px;
+		padding: 16px 40px;
+		border-radius: 5px;
+		font-size: 50px;
+		border: none;
+		background: #34aadc;
+		color: white;
+		cursor: pointer;
+}
 
 
+label { 
+		margin-right: 20px; 
+} 
+#g1,
+#g2,
+#g3,
+#g4 {
+		width: 200px;
+		height: 160px;
+		display: inline-block;
+		margin: 1em;
 
+}
+
+.button1 {
+		margin: 30px 5px 0 2px;
+		padding: 8px 30px;
+		border-radius: 5px;
+		font-size: 18px;
+		border: none;
+		background: #34aadc;
+		color: white;
+		cursor: pointer;
+}
+
+.tg  {
+		border-collapse:collapse;
+		border-spacing:0;
+		border-color:#9ABAD9;
+}
+
+.tg td{
+		font-family:Arial, sans-serif;
+		font-size:14px;
+		padding:10px 25px;
+		border-style:solid;
+		border-width:1px;
+		overflow:hidden;
+		word-break:normal;
+		border-color:#9ABAD9;
+		color:#444;
+		background-color:#EBF5FF;
+}
+
+.tg th{
+		font-family:Arial, sans-serif;
+		font-size:14px;
+		font-weight:normal;
+		padding:10px 25px;
+		border-style:solid;
+		border-width:1px;
+		overflow:hidden;
+		Word-break:normal;
+		border-color:#9ABAD9;
+		color:#fff;
+		background-color:#409cff;
+}
+.tg .tg-t{
+		font-size:20px;
+		text-align:center;
+		vertical-align:top
 }
