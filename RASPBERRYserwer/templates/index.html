@@ -6,254 +6,194 @@
 	<link rel="stylesheet" href='../static/style.css'/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> 
-	<script src="{{ url_for('static', filename='jquery-1.8.3.min.js') }}"></script>
+	<script src="../static/jquery-1.12.4.min.js"></script> 
 	<script src="../static/raphael-2.1.4.min.js"></script>
 	<script src="../static/justgage.js"></script>
-
-	<style type="text/css"> 
-		.selectt {  
-			display: none;
-			float:   left; 
-			} 
-		.selecttt { 
-			 display: none; 
-			} 
-		
-		label { 
-			margin-right: 20px; 
-		} 
-	    #g1,
-	    #g2,
-	    #g3,
-	    #g4 {
-	    width: 200px;
-	    height: 160px;
-	    display: inline-block;
-	    margin: 1em;
-	    }
-	    .button1 {
-	      margin: 30px 5px 0 2px;
-	      padding: 8px 30px;
-	      border-radius: 5px;
-	      font-size: 18px;
-	      border: none;
-	      background: #34aadc;
-	      color: white;
-	      cursor: pointer;
-		}
-	td { 
-		border: 1px solid black; 
-		}
-
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#9ABAD9;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 25px; border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 25px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#fff;background-color:#409cff;}
-.tg .tg-e755{font-size:20px;text-align:center;vertical-align:top}
-.tg .tg-kftd{font-size:20px;text-align:center;vertical-align:top}
-.tg .tg-khjd{font-size:20px;text-align:center;vertical-align:top}
-.tg .tg-m71n{font-size:20px;text-align:center;vertical-align:top}
-.tg .tg-4jzn{font-size:20px;text-align:center;vertical-align:top}
-
-	</style> 
+	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
+	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
+	<script src="{{ url_for('static', filename='exporting.js') }}"></script>
 	
 
-<script type="text/javascript">
-$(function () {
-			
-			
-//    $.getJSON('http://192.168.0.200:5000/data.json', function (data) {
-//	$.getJSON('http://192.168.0.200:5000/data1.json', function (data1) {
-    $.getJSON('http://0.0.0.0:5000/data.json', function (data) {
-	$.getJSON('http://0.0.0.0:5000/data1.json', function (data1) {
-        // Create the chart
-        $('#container').highcharts('StockChart', {
-            rangeSelector : {
-                selected : 1
-            },
-            title : {
-                text : 'Temperatura'
-            },
-            series : [{
-                name : 'BMP1',
-                data : data,
-                tooltip: {
-                    valueDecimals: 2
-                }
-            },
-	    {
-                name : 'BMP2',
-                data : data1,
-                tooltip: {
-                    valueDecimals: 2
-                }
-            }]
-        });
+	<script type="text/javascript">
+	$(function () {
+				
+				
+	//    $.getJSON('http://192.168.0.200:5000/data.json', function (data) {
+	//	$.getJSON('http://192.168.0.200:5000/data1.json', function (data1) {
+	    $.getJSON('http://0.0.0.0:5000/data.json', function (data) {
+		$.getJSON('http://0.0.0.0:5000/data1.json', function (data1) {
+		// Create the chart
+		$('#container').highcharts('StockChart', {
+		    rangeSelector : {
+			selected : 1
+		    },
+		    title : {
+			text : 'Temperatura'
+		    },
+		    series : [{
+			name : 'BMP1',
+			data : data,
+			tooltip: {
+			    valueDecimals: 2
+			}
+		    },
+		    {
+			name : 'BMP2',
+			data : data1,
+			tooltip: {
+			    valueDecimals: 2
+			}
+		    }]
+		});
+		});
+	    });
 	});
-    });
-});
-</script>
+	</script>
 
 
-<script src="{{ url_for('static', filename='jquery-1.8.3.min.js') }}"></script>
-		<script type="text/javascript">
-		$(function () {
-			
-			
-//    $.getJSON('http://192.168.0.200:5000/data2.json', function (data2) {
-//	$.getJSON('http://192.168.0.200:5000/data3.json', function (data3) {
-    $.getJSON('http://0.0.0.0:5000/data2.json', function (data2) {
-	$.getJSON('http://0.0.0.0:5000/data3.json', function (data3) {
-        // Create the chart
-        $('#container2').highcharts('StockChart', {
-            rangeSelector : {
-                selected : 1
-            },
-            title : {
-                text : 'Cisnienie'
-            },
-            series : [{
-                name : 'BMP1',
-                data : data2,
-                tooltip: {
-                    valueDecimals: 2
-                }
-            },
-	    {
-                name : 'BMP2',
-                data : data3,
-                tooltip: {
-                    valueDecimals: 2
-                }
-            }]
-        });
+	<script type="text/javascript">
+	$(function () {
+				
+				
+	//    $.getJSON('http://192.168.0.200:5000/data2.json', function (data2) {
+	//	$.getJSON('http://192.168.0.200:5000/data3.json', function (data3) {
+	    $.getJSON('http://0.0.0.0:5000/data2.json', function (data2) {
+		$.getJSON('http://0.0.0.0:5000/data3.json', function (data3) {
+		// Create the chart
+		$('#container2').highcharts('StockChart', {
+		    rangeSelector : {
+			selected : 1
+		    },
+		    title : {
+			text : 'Cisnienie'
+		    },
+		    series : [{
+			name : 'BMP1',
+			data : data2,
+			tooltip: {
+			    valueDecimals: 2
+			}
+		    },
+		    {
+			name : 'BMP2',
+			data : data3,
+			tooltip: {
+			    valueDecimals: 2
+			}
+		    }]
+		});
+		});
+	    });
 	});
-    });
-});
-</script>
+	</script>
 
 
 </head> 
 
 
 <body> 
-	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
-	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
-	<script src="{{ url_for('static', filename='exporting.js') }}"></script>
 	
-	
+		
 	<center> 
 	<h1 style="color:grey;"> Modul akwizycji danych rozproszonego systemu pomiarowego  </h1> 
         
         <div> 
 		
+		<label class="switch">
+			<input type="checkbox" id="czujniki" >Wskazania czujników </label>
 
-
-
-
-		
-	<label class="switch">
-		<input type="checkbox" id="czujniki" >Wskazania czujników </label>
-
-	<label class="switch">
-		<input type="checkbox" id="wykresy" >Wykresy</label> 
-		
-	<label class="switch">
-		<input type="checkbox" id="statystyka" >Dane statystyczne</label> 
+		<label class="switch">
+			<input type="checkbox" id="wykresy" >Wykresy</label> 
+			
+		<label class="switch">
+			<input type="checkbox" id="statystyka" >Dane statystyczne</label> 
 
         </div> 
 	
-	<div class="CZ"> 
-		<div id="cz_lewy">
+	
+	<div class="CZ" style="width:  60%; margin-left:auto; margin-right: auto;"> 
+		
+		<div style="width: 50%; float: left;">
 			<h2>BMP1 </h2>
 			<div id="g1"></div>
 			<div id="g2"></div>
 		</div>
 		
-		<div id="cz_prawy">
+		<div style="width: 50%; float: right;">
 			<h2>BMP2 </h2>
 			<div id="g3"></div>
 			<div id="g4"></div>
 		</div>
-<br><i> Ostatni odczyt BMP1: {{ time1 }} BMP2: {{time2}} ==>   <a href="/"class="button1">ODŚWIEŻ</a></i>
+		
+		<br><i> Ostatni odczyt BMP1: {{ time1 }} BMP2: {{time2}} ==>   <a href="/"class="button1">ODŚWIEŻ</a></i>
 		
 	
 	</div> 
-	
-	
-	
+		
 	<div class="S"> <br>
 
-	
-<table class="tg">
-  <tr>
-    <th class="tg-m71n" colspan="2">TABELA DANYCH</th>
-    <th class="tg-m71n">BMP1</th>
-    <th class="tg-m71n">BMP2</th>
-  </tr>
-  <tr>
-    <td class="tg-m71n" rowspan="3">Temperatura</td>
-    <td class="tg-khjd">Max<br></td>
-    <td class="tg-khjd">{{tempMax}}</td>
-    <td class="tg-khjd">{{tempMax2}}</td>
-  </tr>
-  <tr>
-    <td class="tg-4jzn">Min</td>
-    <td class="tg-4jzn">{{tempMin}}</td>
-    <td class="tg-4jzn">{{tempMin2}}</td>
-  </tr>
-  <tr>
-    <td class="tg-e755">Średnia</td>
-    <td class="tg-e755">{{avgTemp}}</td>
-    <td class="tg-e755">{{avgTemp2}}</td>
-  </tr>
-  <tr>
-    <td class="tg-m71n" rowspan="3">Cisnienie<br></td>
-    <td class="tg-4jzn">Max</td>
-    <td class="tg-4jzn">{{presMax}}</td>
-    <td class="tg-4jzn">{{presMax2}}</td>
-  </tr>
-  <tr>
-    <td class="tg-e755">Min</td>
-    <td class="tg-e755">{{presMin}}</td>
-    <td class="tg-e755">{{presMin2}}</td>
-  </tr>
-  <tr>
-    <td class="tg-kftd">Średnia</td>
-    <td class="tg-kftd">{{avgPres}}</td>
-    <td class="tg-kftd">{{avgPres2}}</td>
-  </tr>
-</table>
+		<table class="tg">
+		  <tr>
+		    <th class="tg-t" colspan="2">TABELA DANYCH</th>
+		    <th class="tg-t">BMP1</th>
+		    <th class="tg-t">BMP2</th>
+		  </tr>
+		  <tr>
+		    <td class="tg-t" rowspan="3">Temperatura</td>
+		    <td class="tg-t">Max<br></td>
+		    <td class="tg-t">{{tempMax}}</td>
+		    <td class="tg-t">{{tempMax2}}</td>
+		  </tr>
+		  <tr>
+		    <td class="tg-t">Min</td>
+		    <td class="tg-t">{{tempMin}}</td>
+		    <td class="tg-t">{{tempMin2}}</td>
+		  </tr>
+		  <tr>
+		    <td class="tg-t">Średnia</td>
+		    <td class="tg-t">{{avgTemp}}</td>
+		    <td class="tg-t">{{avgTemp2}}</td>
+		  </tr>
+		  <tr>
+		    <td class="tg-t" rowspan="3">Cisnienie<br></td>
+		    <td class="tg-t">Max</td>
+		    <td class="tg-t">{{presMax}}</td>
+		    <td class="tg-t">{{presMax2}}</td>
+		  </tr>
+		  <tr>
+		    <td class="tg-t">Min</td>
+		    <td class="tg-t">{{presMin}}</td>
+		    <td class="tg-t">{{presMin2}}</td>
+		  </tr>
+		  <tr>
+		    <td class="tg-t">Średnia</td>
+		    <td class="tg-t">{{avgPres}}</td>
+		    <td class="tg-t">{{avgPres2}}</td>
+		  </tr>
+		</table>
 	
 	</div> 
 	
+	    
 
-
-
-
-
-	<script src="{{ url_for('static', filename='highstock.js') }}"></script>
-	<script src="{{ url_for('static', filename='highcharts-more.js') }}"></script>
-	<script src="{{ url_for('static', filename='exporting.js') }}"></script>	    
-
-<div class="W"> 
-	<div id="container" style="min-width: 310px; height: 400px; width: 90%"></div>
-	<div id="container2" style="min-width: 310px; height: 400px; width: 90%"></div>
-</div>
+	<div class="W"> 
+		<div id="container"></div>
+		<div id="container2"></div>
+	</div>
  
- 		<hr>
-	    <p> @2020 Developed by Malinowe Młode Wilki</p>
+	<hr>
+	<p> @2020 Developed by Malinowe Młode Wilki</p>
     
 
 
 	
   
-    </center> 
+	</center> 
     
-    
+
         <script>
 	var g1, g2, g3, g4;
-document.addEventListener("DOMContentLoaded", function(event) {
+	document.addEventListener("DOMContentLoaded", function(event) {
 	    g1 = new JustGage({
 		id: "g1",
 		value: {{temp}},
@@ -301,7 +241,7 @@ $(function(){
       .on('change', function() {
          localStorage.inputCZ = this.checked;
          if (this.checked) {
-           $('.CZ').show(0); //checked
+           $('.CZ').show(0);
          } else {
            $('.CZ').hide(0);
          }
@@ -317,7 +257,7 @@ $(function(){
       .on('change', function() {
          localStorage.inputW = this.checked;
          if (this.checked) {
-           $('.W').show(0); //checked
+           $('.W').show(0); 
          } else {
            $('.W').hide(0);
          }
@@ -333,7 +273,7 @@ $(function(){
       .on('change', function() {
          localStorage.inputS = this.checked;
          if (this.checked) {
-           $('.S').show(0); //checked
+           $('.S').show(0); 
          } else {
            $('.S').hide(0);
          }
