@@ -139,7 +139,7 @@
 		    <th class="tg-t">BMP2</th>
 		  </tr>
 		  <tr>
-		    <td class="tg-t" rowspan="3">Temperatura</td>
+		    <td class="tg-t" rowspan="3">Temperatura [°C]</td>
 		    <td class="tg-t">Max<br></td>
 		    <td class="tg-t">{{tempMax}}</td>
 		    <td class="tg-t">{{tempMax2}}</td>
@@ -155,7 +155,7 @@
 		    <td class="tg-t">{{avgTemp2}}</td>
 		  </tr>
 		  <tr>
-		    <td class="tg-t" rowspan="3">Cisnienie<br></td>
+		    <td class="tg-t" rowspan="3">Cisnienie [Pa]<br></td>
 		    <td class="tg-t">Max</td>
 		    <td class="tg-t">{{presMax}}</td>
 		    <td class="tg-t">{{presMax2}}</td>
@@ -201,7 +201,8 @@
 		min: -10,
 		max: 50,
 		title: "Temperatura",
-		label: "Celciuszy"
+		label: "Celciuszy",
+		decimals : 2
 	});
 	    g2 = new JustGage({
 		id: "g2",
@@ -209,8 +210,9 @@
 		valueFontColor: "black",
 		min: 900,
 		max: 1100,
-		title: "Cisnienie",
-		label: "%"
+		title: "°C",
+		label: "Pa",
+		decimals : 2
 	});
 	    g3 = new JustGage({
 		id: "g3",
@@ -219,7 +221,8 @@
 		min: -10,
 		max: 50,
 		title: "Temperatura",
-		label: "Celciuszy"
+		label: "°C",
+		decimals : 2
 	});
 	    g4 = new JustGage({
 		id: "g4",
@@ -228,7 +231,8 @@
 		min: 900,
 		max: 1100,
 		title: "Cisnienie",
-		label: "%"
+		label: "Pa",
+		decimals : 2
 	});
       });
     </script>

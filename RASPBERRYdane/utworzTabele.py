@@ -3,9 +3,9 @@ import sys
 
 con = lite.connect('dane.db')
 
-typ_czujnikow = raw_input("Podaj typ wykorzystywanych czujnikow: ")
+typ_czujnikow = input("Podaj typ wykorzystywanych czujnikow: ")
 typ_czujnikow = str(typ_czujnikow)
-liczba_czujnikow = int(raw_input("Podaj liczbe wykorzystywanych czujnikow: "))
+liczba_czujnikow = int(input("Podaj liczbe wykorzystywanych czujnikow: "))
 
 with con: 
     cur = con.cursor()
