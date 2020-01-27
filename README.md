@@ -1,7 +1,6 @@
 # Repozytorium DAQ
 ## _Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"_
-## TO DO:
-1. Serwer FLASK
+
 
 ## __Opis projektu__:  
 __Rozproszone systemy pomiarowe__, oparte o kablową transmisję danych związane są
