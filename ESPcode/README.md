@@ -4,6 +4,8 @@
 Układ oparty na podzespołach:
 1. nodemcu v3
 2. sensor BMP280
+
+
 Działa stabilnie z ArduinoIDE 1.8.9
 #
 ## HOW TO
