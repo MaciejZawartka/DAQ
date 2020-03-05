@@ -1,6 +1,7 @@
 # Repozytorium DAQ
 ## _Temat projektu: "MODUŁ AKWIZYCJI DANYCH ROZPROSZONEGO SYSTEMU POMIAROWEGO"_
 
+_Przykład działania_: https://www.youtube.com/watch?v=E4vepMOxi5U
 
 ## __Opis projektu__:  
 __Rozproszone systemy pomiarowe__, oparte o kablową transmisję danych związane są
